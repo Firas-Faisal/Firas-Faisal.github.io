@@ -20191,7 +20191,7 @@ a0f:function a0f(){},
 rP:function rP(a){this.a=a},
 HR:function HR(){this.c=this.a=null},
 afP(a){var s=t.s
-return new A.Dk(A.a([new A.m0("Diploma In Software Engineering","German-Malaysian Institute","2022 - Present","Specializing in Software Testing and development",A.a(["CGPA: 3.43/4.0"],s),B.bK,B.hn),new A.m0("Sijil Pelajaran Malaysia (SPM)","SMK Puncak Alam","2020 - 2021","",A.a(["Result: 3A+,1A,1A-,2B+,1B"],s),B.h1,B.AF)],t.rL),a)},
+return new A.Dk(A.a([new A.m0("Diploma In Software Engineering","German-Malaysian Institute","2022 - Present","Specializing in Software Testing and development",A.a(["CGPA: 3.43/4.0"],s),B.bK,B.hn),new A.m0("Sijil Pelajaran Malaysia (SPM)","SMK Puncak Alam","2020 - 2021","",A.a([" "],s),B.h1,B.AF)],t.rL),a)},
 Dk:function Dk(a,b){this.c=a
 this.a=b},
 Yy:function Yy(){},
