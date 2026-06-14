@@ -1,0 +1,1210 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+const projects = [
+  {
+    id: "01",
+    title: "UTeM Event Microsite",
+    year: "2025",
+    role: "UI Designer + Frontend Developer",
+    tools: "Figma, Astro, Tailwind",
+    summary:
+      "Designed and built a responsive event portal with registration and schedule browsing.",
+    impact:
+      "Reduced user confusion during registration flow using clearer labels, progress cues, and form grouping.",
+  },
+  {
+    id: "02",
+    title: "Food Ordering Prototype",
+    year: "2024",
+    role: "UX Research + Prototype",
+    tools: "Figma, Maze",
+    summary:
+      "Created a clickable high-fidelity prototype for a campus food ordering concept.",
+    impact:
+      "Improved task completion time by simplifying checkout steps from 5 screens to 3.",
+  },
+  {
+    id: "03",
+    title: "Freelance Cafe Landing Page",
+    year: "2023",
+    role: "Freelance Web Designer",
+    tools: "HTML, CSS, JavaScript",
+    summary:
+      "Delivered a branded one-page site with menu highlights and WhatsApp CTA.",
+    impact:
+      "Helped client increase direct inquiries through stronger CTA visibility.",
+  },
+];
+
+const qualities = [
+  {
+    icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
+    title: "Detail-Oriented",
+    desc: "Consistent attention to spacing, alignment, and responsive behavior across every screen size.",
+  },
+  {
+    icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z",
+    title: "Clear Communicator",
+    desc: "Translates design decisions into plain language for teammates, lecturers, and clients.",
+  },
+  {
+    icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z",
+    title: "Creative Problem-Solver",
+    desc: "Approaches user pain points with iterative thinking — testing, observing, and refining.",
+  },
+  {
+    icon: "M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z",
+    title: "Design Systems Thinker",
+    desc: "Builds reusable components and consistent visual tokens instead of one-off styles.",
+  },
+  {
+    icon: "M13 10V3L4 14h7v7l9-11h-7z",
+    title: "Fast Learner",
+    desc: "Quickly picks up new frameworks, tools, and workflows through hands-on experimentation.",
+  },
+  {
+    icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z",
+    title: "Collaborative Team Player",
+    desc: "Comfortable working in group projects, distributing responsibilities and meeting deadlines.",
+  },
+];
+---
+
+<BaseLayout
+  title="Ahmad Firas | Portfolio"
+  description="A clean one-page portfolio featuring projects, academic background, personal qualities, and downloadable certificates."
+>
+  <main
+    class="relative mx-auto flex min-h-screen w-[min(1120px,calc(100%-32px))] flex-col py-6 text-white sm:py-8"
+  >
+    <header
+      class="sticky top-4 z-20 mb-6 rounded-[20px] border border-white/15 bg-slate-950/70 px-5 py-4 shadow-glow backdrop-blur-xl"
+    >
+      <div class="flex items-center justify-between gap-4">
+        <a href="#home" class="font-display text-[1.1rem] tracking-[0.02em]"
+          >Ahmad Firas</a
+        >
+
+        <nav
+          class="hidden items-center gap-4 text-sm text-slate-300 md:flex md:gap-5"
+        >
+          <a class="transition hover:text-white" href="#profile">Profile</a>
+          <a class="transition hover:text-white" href="#academic">Academic</a>
+          <a class="transition hover:text-white" href="#achievements"
+            >Achievements</a
+          >
+          <a class="transition hover:text-white" href="#projects">Projects</a>
+          <a class="transition hover:text-white" href="#qualities">Qualities</a>
+        </nav>
+
+        <a
+          class="hidden min-h-12 items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 font-extrabold text-white transition hover:-translate-y-0.5 hover:bg-white/10 md:inline-flex"
+          href="#contact"
+        >
+          Let's talk
+        </a>
+
+        <details class="relative md:hidden">
+          <summary
+            class="flex list-none cursor-pointer items-center justify-center rounded-full border border-white/15 bg-white/5 px-4 py-3 text-white transition hover:bg-white/10 [&::-webkit-details-marker]:hidden"
+          >
+            <span class="sr-only">Open navigation menu</span>
+            <span class="flex flex-col gap-1.5">
+              <span class="h-0.5 w-5 rounded-full bg-current"></span>
+              <span class="h-0.5 w-5 rounded-full bg-current"></span>
+              <span class="h-0.5 w-5 rounded-full bg-current"></span>
+            </span>
+          </summary>
+
+          <div
+            class="absolute right-0 mt-3 w-56 rounded-2xl border border-white/15 bg-slate-950/95 p-3 shadow-glow backdrop-blur-xl"
+          >
+            <nav class="flex flex-col gap-1 text-sm text-slate-300">
+              <a
+                class="rounded-xl px-3 py-2 transition hover:bg-white/10 hover:text-white"
+                href="#profile">Profile</a
+              >
+              <a
+                class="rounded-xl px-3 py-2 transition hover:bg-white/10 hover:text-white"
+                href="#academic">Academic</a
+              >
+              <a
+                class="rounded-xl px-3 py-2 transition hover:bg-white/10 hover:text-white"
+                href="#achievements">Achievements</a
+              >
+              <a
+                class="rounded-xl px-3 py-2 transition hover:bg-white/10 hover:text-white"
+                href="#projects">Projects</a
+              >
+              <a
+                class="rounded-xl px-3 py-2 transition hover:bg-white/10 hover:text-white"
+                href="#qualities">Qualities</a
+              >
+              <a
+                class="rounded-xl px-3 py-2 transition hover:bg-white/10 hover:text-white"
+                href="#contact">Let's talk</a
+              >
+            </nav>
+          </div>
+        </details>
+      </div>
+    </header>
+
+    <section
+      id="home"
+      class="grid flex-1 items-center gap-8 py-8 lg:grid-cols-[1fr_360px]"
+    >
+      <div>
+        <p
+          class="inline-flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.2em] text-mint before:h-px before:w-9 before:bg-current before:content-['']"
+        >
+          Selected portfolio / Mobile & Desktop Ready
+        </p>
+        <h1
+          class="mt-4 max-w-[48ch] font-display text-[clamp(2.2rem,5vw,3.6rem)] leading-[1.02] tracking-[-0.02em]"
+        >
+          Designing clean, responsive web experiences that feel sharp on every
+          screen.
+        </h1>
+        <p
+          class="mt-5 max-w-[60ch] text-base leading-7 text-slate-300 sm:text-lg"
+        >
+          I am a Database Management student. I have completed several projects
+          that show I'm prepared for real-world development tasks, from app
+          prototypes to web interfaces. I enjoy learning new tools and applying
+          them to practical problems.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3 sm:gap-4">
+          <a
+            class="inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-r from-accent to-[#ffcf7d] px-5 font-extrabold text-slate-950 shadow-[0_18px_40px_rgba(247,185,85,0.22)] transition hover:-translate-y-0.5"
+            href="#projects"
+          >
+            View projects
+          </a>
+          <a
+            class="inline-flex min-h-12 items-center justify-center rounded-full border border-white/15 bg-white/5 px-5 font-extrabold text-white transition hover:bg-white/10"
+            href="#contact"
+          >
+            Let's talk
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="overflow-hidden rounded-[24px] border border-white/12 bg-[rgba(15,23,42,0.72)] p-3 shadow-glow backdrop-blur-xl transition duration-200 hover:-translate-y-1 hover:border-white/20"
+        style="max-width:360px;"
+      >
+        <div
+          class="relative overflow-hidden rounded-[18px] border border-white/10"
+          style="max-width:320px;"
+        >
+          <div
+            class="absolute inset-auto -right-12 -bottom-12 h-40 w-40 rounded-full bg-[radial-gradient(circle,rgba(247,185,85,0.22),transparent_70%)] blur-md"
+          >
+          </div>
+          <Image
+            src="/profile.png"
+            alt="Ahmad Firas portrait"
+            class="aspect-[4/5] w-full object-cover rounded-lg"
+            width={320}
+            height={400}
+            loading="eager"
+            priority
+          />
+        </div>
+        <div class="mt-4 flex items-center justify-between gap-4">
+          <div>
+            <p class="font-display text-lg text-white">Ahmad Firas</p>
+            <span class="text-sm text-slate-300"
+              >Database Management student</span
+            >
+          </div>
+          <span
+            class="rounded-full border border-mint/30 bg-mint/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-mint"
+            >Portfolio</span
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-4" aria-labelledby="skills-heading">
+      <div
+        class="rounded-[20px] border border-white/15 bg-white/5 p-5 shadow-glow backdrop-blur-xl"
+      >
+        <h2
+          id="skills-heading"
+          class="inline-flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.2em] text-mint"
+        >
+          Skills
+        </h2>
+        <div
+          class="mt-4 grid grid-cols-3 gap-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-12"
+        >
+          <!-- Skill item -->
+          <div class="group flex flex-col items-center gap-2">
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/3 transition-transform duration-200 group-hover:-translate-y-1 group-hover:scale-105"
+            >
+              <Image
+                src="/icons/fi441f906-figma-logo-figma-logo-png-transparent-amp-svg-vector-freebie-supply.webp"
+                alt="Figma"
+                class="h-6 w-6 object-contain"
+                width={24}
+                height={24}
+              />
+            </div>
+            <span class="text-xs text-slate-300">Figma</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2">
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/3 transition-transform duration-200 group-hover:-translate-y-1 group-hover:scale-105"
+            >
+              <Image
+                src="/icons/canva-seeklogo.png"
+                alt="Canva"
+                class="h-6 w-6 object-contain"
+                width={24}
+                height={24}
+              />
+            </div>
+            <span class="text-xs text-slate-300">Canva</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2">
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/3 transition-transform duration-200 group-hover:-translate-y-1 group-hover:scale-105"
+            >
+              <Image
+                src="/icons/mi3160fa63-microsoft-office-logo-file-microsoft-office-logo-2019-present-svg-liblogo.webp"
+                alt="Microsoft"
+                class="h-6 w-6 object-contain"
+                width={24}
+                height={24}
+              />
+            </div>
+            <span class="text-xs text-slate-300">MS Office</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2">
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/3 transition-transform duration-200 group-hover:-translate-y-1 group-hover:scale-105"
+            >
+              <Image
+                src="/icons/vscode.svg"
+                alt="VS Code"
+                class="h-6 w-6 object-contain"
+                width={24}
+                height={24}
+              />
+            </div>
+            <span class="text-xs text-slate-300">VS Code</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2">
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/3 transition-transform duration-200 group-hover:-translate-y-1 group-hover:scale-105"
+            >
+              <Image
+                src="/icons/github.svg"
+                alt="GitHub"
+                class="h-6 w-6 object-contain"
+                width={24}
+                height={24}
+              />
+            </div>
+            <span class="text-xs text-slate-300">GitHub</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2">
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/3 transition-transform duration-200 group-hover:-translate-y-1 group-hover:scale-105"
+            >
+              <Image
+                src="/icons/zerotier.svg"
+                alt="ZeroTier"
+                class="h-6 w-6 object-contain"
+                width={24}
+                height={24}
+              />
+            </div>
+            <span class="text-xs text-slate-300">ZeroTier</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2">
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/3 transition-transform duration-200 group-hover:-translate-y-1 group-hover:scale-105"
+            >
+              <Image
+                src="/icons/dbeaver.svg"
+                alt="DBeaver"
+                class="h-6 w-6 object-contain"
+                width={24}
+                height={24}
+              />
+            </div>
+            <span class="text-xs text-slate-300">DBeaver</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2">
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/3 transition-transform duration-200 group-hover:-translate-y-1 group-hover:scale-105"
+            >
+              <Image
+                src="/icons/firebase.svg"
+                alt="Firebase"
+                class="h-6 w-6 object-contain"
+                width={24}
+                height={24}
+              />
+            </div>
+            <span class="text-xs text-slate-300">Firebase</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2">
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/3 transition-transform duration-200 group-hover:-translate-y-1 group-hover:scale-105"
+            >
+              <Image
+                src="/icons/c.svg"
+                alt="C"
+                class="h-6 w-6 object-contain"
+                width={24}
+                height={24}
+              />
+            </div>
+            <span class="text-xs text-slate-300">C</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2">
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/3 transition-transform duration-200 group-hover:-translate-y-1 group-hover:scale-105"
+            >
+              <Image
+                src="/icons/cplusplus.svg"
+                alt="C++"
+                class="h-6 w-6 object-contain"
+                width={24}
+                height={24}
+              />
+            </div>
+            <span class="text-xs text-slate-300">C++</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2">
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/3 transition-transform duration-200 group-hover:-translate-y-1 group-hover:scale-105"
+            >
+              <Image
+                src="/icons/python.svg"
+                alt="Python"
+                class="h-6 w-6 object-contain"
+                width={24}
+                height={24}
+              />
+            </div>
+            <span class="text-xs text-slate-300">Python</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2">
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/3 transition-transform duration-200 group-hover:-translate-y-1 group-hover:scale-105"
+            >
+              <Image
+                src="/icons/openjdk.svg"
+                alt="OpenJDK"
+                class="h-6 w-6 object-contain"
+                width={24}
+                height={24}
+              />
+            </div>
+            <span class="text-xs text-slate-300">Java</span>
+          </div>
+
+          <div class="group flex flex-col items-center gap-2">
+            <div
+              class="flex h-12 w-12 items-center justify-center rounded-xl border border-white/10 bg-white/3 transition-transform duration-200 group-hover:-translate-y-1 group-hover:scale-105"
+            >
+              <Image
+                src="/icons/flutter.svg"
+                alt="Flutter"
+                class="h-6 w-6 object-contain"
+                width={24}
+                height={24}
+              />
+            </div>
+            <span class="text-xs text-slate-300">Flutter</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="profile"
+      class="grid gap-8 rounded-[28px] border border-white/15 bg-white/5 p-7 shadow-glow backdrop-blur-xl lg:grid-cols-[0.8fr_1.2fr]"
+    >
+      <div>
+        <p
+          class="inline-flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.2em] text-mint before:h-px before:w-9 before:bg-current before:content-['']"
+        >
+          Personal Profile
+        </p>
+        <h2
+          class="mt-3 font-display text-[clamp(2rem,4vw,3.3rem)] leading-none tracking-[-0.02em] text-white"
+        >
+          Personal and contact details in one clear section.
+        </h2>
+      </div>
+      <div class="space-y-4 self-start text-slate-300 leading-7">
+        <p>
+          I'm a Database Management student at Universiti Teknikal Malaysia
+          Melaka (UTeM). My coursework and projects focus on databases, backend
+          integration, and practical app development. I build small apps and
+          prototypes to explore real-world workflows.
+        </p>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <p
+            class="rounded-xl border border-white/15 bg-slate-950/40 p-4 transition duration-200 hover:border-mint/30 hover:bg-slate-950/60"
+          >
+            <strong class="text-white">Email:</strong> ahmadfiras.faisal@gmail.com
+          </p>
+          <p
+            class="rounded-xl border border-white/15 bg-slate-950/40 p-4 transition duration-200 hover:border-mint/30 hover:bg-slate-950/60"
+          >
+            <strong class="text-white">Intern:</strong> Darash Maju — App Developer
+          </p>
+          <p
+            class="rounded-xl border border-white/15 bg-slate-950/40 p-4 transition duration-200 hover:border-mint/30 hover:bg-slate-950/60"
+          >
+            <strong class="text-white">GitHub:</strong> github.com/Firas-Faisal
+          </p>
+          <p
+            class="rounded-xl border border-white/15 bg-slate-950/40 p-4 transition duration-200 hover:border-mint/30 hover:bg-slate-950/60"
+          >
+            <strong class="text-white">LinkedIn:</strong> www.linkedin.com/in/ahmad-firas04
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="academic" class="py-8">
+      <div class="mb-8">
+        <p
+          class="inline-flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.2em] text-mint before:h-px before:w-9 before:bg-current before:content-['']"
+        >
+          Academic History
+        </p>
+        <h2
+          class="mt-3 font-display text-[clamp(2rem,4vw,3rem)] tracking-[-0.02em] text-white"
+        >
+          Education
+        </h2>
+      </div>
+
+      <div
+        class="relative ml-4 border-l border-white/15 pl-6 md:ml-6 space-y-8"
+      >
+        <!-- Universiti Teknikal Malaysia Melaka -->
+        <div class="relative">
+          <!-- Dot on timeline -->
+          <div
+            class="absolute -left-8 top-7 h-4 w-4 rounded-full border-2 border-mint bg-slate-950 shadow-[0_0_12px_rgba(94,234,212,0.6)]"
+          >
+          </div>
+
+          <div
+            class="rounded-[22px] border border-white/15 bg-white/5 p-6 shadow-glow backdrop-blur-xl transition duration-200 hover:-translate-y-1 hover:border-mint/30 hover:bg-white/8"
+          >
+            <span
+              class="inline-block rounded-full border border-mint/30 bg-mint/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-mint"
+            >
+              2025 - Present
+            </span>
+            <h3 class="mt-3 font-display text-2xl text-white">
+              Universiti Teknikal Malaysia Melaka
+            </h3>
+            <p class="mt-2 text-slate-300">
+              Bachelor's in Database Management System — currently enrolled.
+            </p>
+          </div>
+        </div>
+
+        <!-- German-Malaysian Institute -->
+        <div class="relative">
+          <!-- Dot on timeline -->
+          <div
+            class="absolute -left-8 top-7 h-4 w-4 rounded-full border-2 border-mint bg-slate-950 shadow-[0_0_12px_rgba(94,234,212,0.6)]"
+          >
+          </div>
+
+          <div
+            class="rounded-[22px] border border-white/15 bg-white/5 p-6 shadow-glow backdrop-blur-xl transition duration-200 hover:-translate-y-1 hover:border-mint/30 hover:bg-white/8"
+          >
+            <span
+              class="inline-block rounded-full border border-mint/30 bg-mint/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-mint"
+            >
+              2022 - 2025
+            </span>
+            <h3 class="mt-3 font-display text-2xl text-white">
+              German-Malaysian Institute
+            </h3>
+            <p class="mt-2 text-slate-300">
+              Diploma in Database Management System / Information Technology
+              (2022–2025). CGPA: 3.61.
+            </p>
+          </div>
+        </div>
+
+        <!-- SMK Puncak Alam -->
+        <div class="relative">
+          <!-- Dot on timeline -->
+          <div
+            class="absolute -left-8 top-7 h-4 w-4 rounded-full border-2 border-white/30 bg-slate-950"
+          >
+          </div>
+
+          <div
+            class="rounded-[22px] border border-white/15 bg-white/5 p-6 shadow-glow backdrop-blur-xl transition duration-200 hover:-translate-y-1 hover:border-mint/30 hover:bg-white/8"
+          >
+            <span
+              class="inline-block rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-slate-300"
+            >
+              2021
+            </span>
+            <h3 class="mt-3 font-display text-2xl text-white">
+              SMK Puncak Alam
+            </h3>
+            <p class="mt-2 text-slate-300">
+              Completed SPM (Sijil Pelajaran Malaysia) in 2021.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements" class="py-8">
+      <div class="mb-6">
+        <p
+          class="inline-flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.2em] text-mint before:h-px before:w-9 before:bg-current before:content-['']"
+        >
+          Achievements
+        </p>
+        <h2
+          class="mt-3 font-display text-[clamp(2rem,4vw,3rem)] tracking-[-0.02em] text-white"
+        >
+          Certificates
+        </h2>
+        <p class="max-w-[60ch] mt-2 text-slate-300">
+          Click the tabs below to view certificates directly on the page, or
+          download them for offline use.
+        </p>
+      </div>
+
+      <div class="grid gap-6 lg:grid-cols-[380px_1fr]">
+        <!-- Left Side: Certificate Tabs -->
+        <div class="flex flex-col gap-3.5">
+          <!-- Tab 1: WorldSkills -->
+          <button
+            data-tab-img="/sijil/SIJIL PRA Q _MADAHMAD FIRAS BIN MOHD FAISAL.webp"
+            data-tab-pdf="/sijil/SIJIL PRA Q _MADAHMAD FIRAS BIN MOHD FAISAL.pdf"
+            data-tab-title="WorldSkills Malaysia"
+            class="cert-tab active relative flex flex-col text-left rounded-2xl border border-mint/40 bg-gradient-to-br from-mint/10 to-slate-950/40 p-5 shadow-[0_4px_24px_rgba(94,234,212,0.1)] transition-all duration-300 hover:border-mint/50 hover:bg-slate-950/60 hover:-translate-y-0.5"
+            aria-label="View WorldSkills Malaysia Mobile Application Development certificate"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="flex h-10 w-10 items-center justify-center rounded-xl bg-mint/15 text-mint shadow-[0_0_10px_rgba(94,234,212,0.2)] transition-colors duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 14l3.09 6.3 7-1-5-4.87L18.18 7.5 12 11.25l-6.18-3.75L7 14.43l-5 4.87 7 1L12 14z"
+                  ></path>
+                </svg>
+              </div>
+              <span
+                class="text-xs font-bold uppercase tracking-[0.14em] text-mint transition-colors duration-300"
+                >WorldSkills Malaysia</span
+              >
+            </div>
+            <h3
+              class="mt-4 font-display text-[1.15rem] leading-snug text-white tracking-wide"
+            >
+              Mobile Application Development
+            </h3>
+            <p class="mt-1 text-slate-400 text-xs font-medium">
+              Achievement Certificate
+            </p>
+            <div
+              class="mt-4 flex items-center justify-between w-full border-t border-white/5 pt-3"
+            >
+              <span
+                class="text-[0.7rem] uppercase tracking-[0.1em] text-mint/80 font-bold transition-colors duration-300"
+                >Active View</span
+              >
+              <a
+                href="/sijil/SIJIL PRA Q _MADAHMAD FIRAS BIN MOHD FAISAL.pdf"
+                download
+                class="inline-flex h-8 items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-3 text-xs font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10 hover:border-white/20 stop-prop shadow-sm"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-3.5 w-3.5 text-slate-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  ></path>
+                </svg>
+                <span>Download</span>
+              </a>
+            </div>
+          </button>
+
+          <!-- Tab 2: RunCloud -->
+          <button
+            data-tab-img="/sijil/Cloud computing fundamental.webp"
+            data-tab-pdf="/sijil/Cloud computing fundamental.pdf"
+            data-tab-title="RunCloud Fundamental"
+            class="cert-tab relative flex flex-col text-left rounded-2xl border border-white/10 bg-slate-950/20 p-5 shadow-sm transition-all duration-300 hover:border-white/20 hover:bg-slate-950/40 hover:-translate-y-0.5"
+            aria-label="View RunCloud Fundamental of Cloud Computing certificate"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 text-slate-300 transition-colors duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  ></path>
+                </svg>
+              </div>
+              <span
+                class="text-xs font-bold uppercase tracking-[0.14em] text-slate-400 transition-colors duration-300"
+                >UTeM & RunCloud</span
+              >
+            </div>
+            <h3
+              class="mt-4 font-display text-[1.15rem] leading-snug text-white tracking-wide"
+            >
+              Fundamental of Cloud Computing
+            </h3>
+            <p class="mt-1 text-slate-400 text-xs font-medium">
+              Course Certificate
+            </p>
+            <div
+              class="mt-4 flex items-center justify-between w-full border-t border-white/5 pt-3"
+            >
+              <span
+                class="text-[0.7rem] uppercase tracking-[0.1em] text-slate-400 font-bold transition-colors duration-300"
+                >Click to View</span
+              >
+              <a
+                href="/sijil/Cloud computing fundamental.pdf"
+                download
+                class="inline-flex h-8 items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-3 text-xs font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10 hover:border-white/20 stop-prop shadow-sm"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-3.5 w-3.5 text-slate-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  ></path>
+                </svg>
+                <span>Download</span>
+              </a>
+            </div>
+          </button>
+
+          <!-- Tab 3: Cisco -->
+          <button
+            data-tab-img="/sijil/Sijil OS cisco.webp"
+            data-tab-pdf="/sijil/Sijil OS cisco.pdf"
+            data-tab-title="Cisco IT Essentials"
+            class="cert-tab relative flex flex-col text-left rounded-2xl border border-white/10 bg-slate-950/20 p-5 shadow-sm transition-all duration-300 hover:border-white/20 hover:bg-slate-950/40 hover:-translate-y-0.5"
+            aria-label="View Cisco IT Essentials certificate"
+          >
+            <div class="flex items-center gap-3">
+              <div
+                class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 text-slate-300 transition-colors duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </div>
+              <span
+                class="text-xs font-bold uppercase tracking-[0.14em] text-slate-400 transition-colors duration-300"
+                >Cisco Academy</span
+              >
+            </div>
+            <h3
+              class="mt-4 font-display text-[1.15rem] leading-snug text-white tracking-wide"
+            >
+              IT Essentials
+            </h3>
+            <p class="mt-1 text-slate-400 text-xs font-medium">
+              Module Certificate
+            </p>
+            <div
+              class="mt-4 flex items-center justify-between w-full border-t border-white/5 pt-3"
+            >
+              <span
+                class="text-[0.7rem] uppercase tracking-[0.1em] text-slate-400 font-bold transition-colors duration-300"
+                >Click to View</span
+              >
+              <a
+                href="/sijil/Sijil OS cisco.pdf"
+                download
+                class="inline-flex h-8 items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-3 text-xs font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10 hover:border-white/20 stop-prop shadow-sm"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-3.5 w-3.5 text-slate-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  ></path>
+                </svg>
+                <span>Download</span>
+              </a>
+            </div>
+          </button>
+        </div>
+
+        <!-- Right Side: Certificate Image Viewer Panel (Mock Browser Window) -->
+        <div
+          class="relative flex h-[580px] w-full flex-col rounded-3xl border border-white/15 bg-slate-900/40 shadow-glow backdrop-blur-xl overflow-hidden"
+        >
+          <!-- macOS mock window controls header -->
+          <div
+            class="flex items-center justify-between border-b border-white/10 bg-slate-950/60 px-5 py-3.5"
+          >
+            <div class="flex items-center gap-1.5">
+              <span class="h-3 w-3 rounded-full bg-red-500/80"></span>
+              <span class="h-3 w-3 rounded-full bg-yellow-500/80"></span>
+              <span class="h-3 w-3 rounded-full bg-green-500/80"></span>
+            </div>
+            <span
+              id="viewer-title"
+              class="text-xs font-semibold tracking-wider text-slate-400 uppercase"
+              >WorldSkills Malaysia</span
+            >
+            <!-- Fullscreen / Zoom Button -->
+            <a
+              id="viewer-expand-btn"
+              href="/sijil/SIJIL PRA Q _MADAHMAD FIRAS BIN MOHD FAISAL.pdf"
+              target="_blank"
+              class="text-slate-400 hover:text-white transition-colors duration-200"
+              title="Open full PDF in new tab"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-4 w-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                ></path>
+              </svg>
+            </a>
+          </div>
+          <!-- Image Canvas Area -->
+          <div
+            class="flex-1 bg-slate-950/80 p-4 flex items-center justify-center relative group"
+          >
+            <Image
+              id="inline-pdf-viewer"
+              class="h-full max-h-[480px] w-full rounded-xl object-contain shadow-2xl transition-all duration-300 group-hover:scale-[1.01]"
+              src="/sijil/SIJIL PRA Q _MADAHMAD FIRAS BIN MOHD FAISAL.webp"
+              alt="Certificate Preview"
+              width={800}
+              height={600}
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="py-8">
+      <div
+        class="mb-8 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between"
+      >
+        <div>
+          <p
+            class="inline-flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.2em] text-mint before:h-px before:w-9 before:bg-current before:content-['']"
+          >
+            Projects
+          </p>
+          <h2
+            class="mt-3 font-display text-[clamp(2rem,4vw,3rem)] tracking-[-0.02em] text-white"
+          >
+            Selected work
+          </h2>
+        </div>
+        <p class="max-w-[40ch] text-slate-300 leading-7">
+          Work from coursework and freelance contexts, each with a defined role
+          and measurable impact. More on my GitHub.
+        </p>
+      </div>
+
+      <div class="grid gap-5 md:grid-cols-3">
+        {
+          projects.map((project) => (
+            <article
+              class="group relative flex flex-col rounded-[26px] border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-0 shadow-glow backdrop-blur-xl overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-mint/30 hover:shadow-[0_20px_60px_rgba(94,234,212,0.08)]"
+              aria-label={project.title}
+            >
+              {/* Top accent line that glows on hover */}
+              <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-mint/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+              {/* Card Body */}
+              <div class="flex flex-1 flex-col p-6 pb-4">
+                {/* Project number badge */}
+                <div class="mb-5 flex items-center justify-between">
+                  <span class="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-mint/10 text-sm font-extrabold tracking-wider text-mint border border-mint/20 shadow-[0_0_10px_rgba(94,234,212,0.1)]">
+                    {project.id}
+                  </span>
+                  <span class="text-xs font-semibold tracking-widest text-slate-400 uppercase">
+                    {project.year}
+                  </span>
+                </div>
+
+                {/* Title */}
+                <h3 class="font-display text-[1.45rem] leading-tight text-white tracking-tight">
+                  {project.title}
+                </h3>
+
+                {/* Role */}
+                <p class="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-mint/70">
+                  {project.role}
+                </p>
+
+                {/* Summary */}
+                <p class="mt-4 text-slate-300 leading-7 text-sm flex-1">
+                  {project.summary}
+                </p>
+              </div>
+
+              {/* Impact Highlight */}
+              <div class="mx-5 mb-4 rounded-xl border border-accent/20 bg-accent/5 p-3.5">
+                <p class="text-xs font-bold uppercase tracking-[0.1em] text-accent mb-1">
+                  Impact
+                </p>
+                <p class="text-sm text-slate-200 leading-6">{project.impact}</p>
+              </div>
+
+              {/* Tools Footer */}
+              <div class="flex flex-wrap gap-1.5 px-6 pb-6">
+                {project.tools.split(", ").map((tool) => (
+                  <span class="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[0.65rem] font-bold uppercase tracking-[0.1em] text-slate-300">
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+
+      {/* Bottom CTA links */}
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a
+          href="https://github.com/Firas-Faisal"
+          target="_blank"
+          rel="noreferrer"
+          class="inline-flex h-10 items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+        >
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 2C6.48 2 2 6.59 2 12.25c0 4.53 2.87 8.38 6.84 9.74.5.1.68-.22.68-.5 0-.25-.01-1.06-.02-1.93-2.78.62-3.37-1.22-3.37-1.22-.45-1.18-1.1-1.49-1.1-1.49-.9-.63.07-.62.07-.62.99.07 1.51 1.05 1.51 1.05.88 1.55 2.31 1.1 2.87.84.09-.65.35-1.1.64-1.35-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.38-2.03 1-2.75-.1-.26-.44-1.31.1-2.72 0 0 .83-.27 2.7 1.05a9.2 9.2 0 0 1 4.92 0c1.87-1.32 2.7-1.05 2.7-1.05.54 1.41.2 2.46.1 2.72.62.72 1 1.63 1 2.75 0 3.94-2.34 4.81-4.57 5.06.36.31.68.92.68 1.86 0 1.35-.01 2.44-.01 2.77 0 .28.18.61.69.5A10.26 10.26 0 0 0 22 12.25C22 6.59 17.52 2 12 2z"
+            ></path>
+          </svg>
+          <span>More on GitHub</span>
+        </a>
+        <a
+          href="https://youtu.be/f-3qvyqHCRg"
+          target="_blank"
+          rel="noreferrer"
+          class="inline-flex h-10 items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+        >
+          <svg
+            class="h-4 w-4 text-red-400"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"
+            ></path>
+          </svg>
+          <span>Diploma Presentation</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="qualities" class="py-8">
+      {/* Section header */}
+      <div class="mb-8">
+        <p
+          class="inline-flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.2em] text-mint before:h-px before:w-9 before:bg-current before:content-['']"
+        >
+          Personal Qualities
+        </p>
+        <h2
+          class="mt-3 font-display text-[clamp(2rem,4vw,3rem)] tracking-[-0.02em] text-white"
+        >
+          Strengths I bring to every project
+        </h2>
+        <p class="mt-3 max-w-[48ch] text-slate-300 leading-7">
+          The soft skills and work habits that shape how I design, build, and
+          collaborate.
+        </p>
+      </div>
+
+      {/* Quality cards grid */}
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          qualities.map((q) => (
+            <div class="group relative flex flex-col gap-4 rounded-[22px] border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-6 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 hover:border-mint/25 hover:shadow-[0_16px_48px_rgba(94,234,212,0.07)]">
+              {/* Hover top glow line */}
+              <div class="absolute top-0 left-0 right-0 h-px rounded-full bg-gradient-to-r from-transparent via-mint/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+              {/* Icon circle */}
+              <div class="flex h-12 w-12 items-center justify-center rounded-2xl border border-mint/20 bg-mint/10 shadow-[0_0_16px_rgba(94,234,212,0.12)] transition-transform duration-300 group-hover:scale-110">
+                <svg
+                  class="h-6 w-6 text-mint"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d={q.icon}
+                  />
+                </svg>
+              </div>
+
+              {/* Title & Description */}
+              <div>
+                <h3 class="font-display text-[1.05rem] font-bold text-white">
+                  {q.title}
+                </h3>
+                <p class="mt-2 text-sm text-slate-300 leading-6">{q.desc}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <section
+      id="contact"
+      class="rounded-[28px] border border-white/15 bg-[rgba(15,23,42,0.72)] p-7 text-left shadow-glow backdrop-blur-xl"
+      aria-label="Contact section"
+    >
+      <p
+        class="inline-flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.2em] text-mint before:h-px before:w-9 before:bg-current before:content-['']"
+      >
+        Contact
+      </p>
+      <h2
+        class="mt-3 max-w-[18ch] font-display text-[clamp(1.6rem,3.6vw,2.5rem)] leading-none tracking-[-0.02em] text-white"
+      >
+        Get in touch
+      </h2>
+      <!-- Rest of your contact section -->
+      <p class="mt-3 max-w-2xl text-slate-300 leading-7">
+        I'm available for internships, freelance work, and collaborations — drop
+        a quick note and we'll take it from there.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a
+          class="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-accent to-[#ffcf7d] px-5 font-extrabold text-slate-950 shadow-[0_18px_40px_rgba(247,185,85,0.22)] transition hover:-translate-y-0.5"
+          href="mailto:ahmadfiras.faisal@gmail.com"
+        >
+          <svg
+            aria-hidden="true"
+            class="h-4 w-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path
+              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+            ></path>
+          </svg>
+          <span>Let's talk</span>
+        </a>
+        <a
+          class="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 font-extrabold text-white transition hover:bg-white/10"
+          href="https://github.com/Firas-Faisal"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <svg
+            aria-hidden="true"
+            class="h-4 w-4"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M12 2C6.48 2 2 6.59 2 12.25c0 4.53 2.87 8.38 6.84 9.74.5.1.68-.22.68-.5 0-.25-.01-1.06-.02-1.93-2.78.62-3.37-1.22-3.37-1.22-.45-1.18-1.1-1.49-1.1-1.49-.9-.63.07-.62.07-.62.99.07 1.51 1.05 1.51 1.05.88 1.55 2.31 1.1 2.87.84.09-.65.35-1.1.64-1.35-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.38-2.03 1-2.75-.1-.26-.44-1.31.1-2.72 0 0 .83-.27 2.7 1.05a9.2 9.2 0 0 1 4.92 0c1.87-1.32 2.7-1.05 2.7-1.05.54 1.41.2 2.46.1 2.72.62.72 1 1.63 1 2.75 0 3.94-2.34 4.81-4.57 5.06.36.31.68.92.68 1.86 0 1.35-.01 2.44-.01 2.77 0 .28.18.61.69.5A10.26 10.26 0 0 0 22 12.25C22 6.59 17.52 2 12 2z"
+            ></path>
+          </svg>
+          <span>GitHub Profile</span>
+        </a>
+        <a
+          class="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 font-extrabold text-white transition hover:bg-white/10"
+          href="https://www.linkedin.com/in/ahmad-firas04"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <svg
+            aria-hidden="true"
+            class="h-4 w-4"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              d="M4.98 3.5A2.5 2.5 0 1 0 4.98 8a2.5 2.5 0 0 0 0-4.5zM3 9h4v12H3zM9 9h3.83v1.64h.05C13.36 9.84 14.68 9 16.5 9 20.13 9 21 11.39 21 14.49V21h-4v-5.74c0-1.37-.03-3.14-1.91-3.14-1.92 0-2.21 1.5-2.21 3.04V21H9z"
+            ></path>
+          </svg>
+          <span>LinkedIn Profile</span>
+        </a>
+      </div>
+    </section>
+
+    <footer
+      class="mt-5 rounded-[20px] border border-white/15 bg-white/5 px-5 py-4 text-center text-sm text-slate-300 shadow-glow backdrop-blur-xl"
+    >
+      <p>&copy; {new Date().getFullYear()} Ahmad Firas.</p>
+    </footer>
+  </main>
+
+  <!-- PDF Viewer Modal -->
+  <script is:inline>
+    const tabs = document.querySelectorAll(".cert-tab");
+    const inlineViewer = document.getElementById("inline-pdf-viewer");
+
+    // Note: The Image component renders as an <img> tag, so this still works
+    tabs.forEach((tab) => {
+      const downloadBtn = tab.querySelector(".stop-prop");
+      if (downloadBtn) {
+        downloadBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+        });
+      }
+
+      tab.addEventListener("click", () => {
+        // Deactivate all tabs
+        tabs.forEach((t) => {
+          t.classList.remove("active", "border-mint/30", "bg-mint/5");
+          t.classList.add("border-white/15", "bg-white/3");
+
+          const badge = t.querySelector(".flex > div");
+          if (badge) {
+            badge.classList.remove("bg-mint/10", "text-mint");
+            badge.classList.add("bg-white/5", "text-slate-300");
+          }
+          const textLabel = t.querySelector(".flex > span");
+          if (textLabel) {
+            textLabel.classList.remove("text-mint");
+            textLabel.classList.add("text-slate-400");
+          }
+          const indicator = t.querySelector(".mt-4 > span");
+          if (indicator) {
+            indicator.textContent = "Click to View";
+            indicator.classList.remove("text-mint/80");
+            indicator.classList.add("text-slate-400");
+          }
+        });
+
+        // Activate clicked tab
+        tab.classList.add("active", "border-mint/30", "bg-mint/5");
+        tab.classList.remove("border-white/15", "bg-white/3");
+
+        const badge = tab.querySelector(".flex > div");
+        if (badge) {
+          badge.classList.add("bg-mint/10", "text-mint");
+          badge.classList.remove("bg-white/5", "text-slate-300");
+        }
+        const textLabel = tab.querySelector(".flex > span");
+        if (textLabel) {
+          textLabel.classList.add("text-mint");
+          textLabel.classList.remove("text-slate-400");
+        }
+        const indicator = tab.querySelector(".mt-4 > span");
+        if (indicator) {
+          indicator.textContent = "Active View";
+          indicator.classList.add("text-mint/80");
+          indicator.classList.remove("text-slate-400");
+        }
+
+        // Update Image Source - works with both regular img and Image component
+        const imgSrc = tab.getAttribute("data-tab-img");
+        if (inlineViewer) {
+          inlineViewer.src = imgSrc;
+        }
+      });
+    });
+  </script>
+</BaseLayout>
