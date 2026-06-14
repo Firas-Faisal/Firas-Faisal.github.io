@@ -6,5 +6,5 @@ export default defineConfig({
 
   site: 'https://Firas-Faisal.github.io',
 
-  base: '/Firas-Faisal.github.io/',
+  base: '/Firas-Faisal.github.io/'
 });
